@@ -1,6 +1,5 @@
 // environment variable
-
-//require('dotenv').config();
+require('dotenv').config();
 
 // DOM manipulation
 const imageContainer = document.getElementById('image-container');
