@@ -47,7 +47,7 @@ h1 {
 /* image container */
 
 .image-container {
-	margin: 10px 10%;
+	margin: 20px 25%;
 }
 
 .image-container img {
@@ -101,6 +101,14 @@ button:active {
 	}
 
 	.image-container {
-		margin: 10px 5%;
+		margin: 10px 20%;
+	}
+
+	.image-container a {
+		font-size: 27px;
+	}
+
+	.image-container a h6 {
+		font-size: 20px;
 	}
 }

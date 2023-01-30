@@ -1,21 +1,33 @@
 // environment variable
 
-// require('dotenv').config();
+//require('dotenv').config();
 
 // DOM manipulation
 const imageContainer = document.getElementById('image-container');
 const loader = document.getElementById('loader');
 
 // out photos will change every time we make request so, global variable
+let ready = false;
+let imagesLoaded = 0;
+let totalImages = 0;
 let photosArray = [];
 
 // Unsplash API
 
-const count = 5;
-// const apiKey = process.env.API_KEY;
-const apiKey = 'xVkS1NHZMO0nZVjWARZFXecqXpu5qBoVgqnvT-k8D2I';
+let count = 5;
+const apiKey = window.process.env.API_KEY;
 
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
+
+// Check if all images were loaded
+function imageLoaded() {
+	imagesLoaded++;
+	if (imagesLoaded === totalImages) {
+		ready = true;
+		loader.hidden = true;
+		count = 20;
+	}
+}
 
 // helper function to set Attributes: following DRY (don't repeat yourself) idea.
 function setAttribute(element, attributes) {
@@ -27,6 +39,8 @@ function setAttribute(element, attributes) {
 // create elements for Links, photos and Add to DOM
 
 function displayPhotos() {
+	imagesLoaded = 0;
+	totalImages = photosArray.length;
 	// run function forEach method in photosArray
 	photosArray.forEach((photo) => {
 		// create <a> to link to unsplash on blank window
@@ -49,6 +63,9 @@ function displayPhotos() {
 			title: photo.alt_description,
 		});
 
+		//Event listener, check when each img is finished loading
+		img.addEventListener('load', imageLoaded);
+
 		// create twitter and Instagram buttons and show Photographer's name
 
 		const photographerDescription = document.createElement('div');
@@ -68,9 +85,6 @@ function displayPhotos() {
 			class: 'btn',
 		});
 
-		if (!photo.user.bio) {
-			bio = 'NA';
-		}
 		setAttribute(photographerDetails, {
 			href: photo.user.links.html,
 			target: '_blank',
@@ -121,11 +135,22 @@ async function getPhotos() {
 		const response = await fetch(apiUrl);
 		photosArray = await response.json();
 		displayPhotos();
-		console.log(photosArray);
 	} catch (error) {
 		// catch error
 	}
 }
+
+// check to see if scrolling near bottom of page, Load more Photos
+
+window.addEventListener('scroll', () => {
+	if (
+		window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000 &&
+		ready
+	) {
+		ready = false;
+		getPhotos();
+	}
+});
 
 // on load
 
