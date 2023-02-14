@@ -110,4 +110,8 @@ body {
   .header .nav-bar a span {
     display: none; /* hide text after 750px or lower for smaller screen*/
   }
+
+  .header .nav-bar a:hover {
+    filter: brightness(1);
+  }
 }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500&family=Ubuntu:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap");
 
 #gallery {
   font-family: "Ubuntu", sans-serif;
@@ -7,9 +7,8 @@
 
 #gallery .card-container {
   display: grid;
-  max-width: 25rem;
-  margin: 0 auto;
-  gap: 10px; /*gap btn grid cards*/
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
   padding: 1.5rem;
 }
 
@@ -71,11 +70,11 @@
 }
 
 .card a:hover {
-  color: #000000;
+  color: #000;
 }
 
 @media (min-width: 600px) {
-  #gallery .card-container {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  #gallery .card-container .heading {
+    margin-top: 4rem;
   }
 }
