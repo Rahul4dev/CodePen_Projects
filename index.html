@@ -1,27 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
-			rel="icon"
-			type="image/png"
-			href="https://www.google.com/s2/favicons?domain=css-tricks.com"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-			integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		/>
-		<link rel="stylesheet" href="styles.css" />
-		<title>Templates</title>
-	</head>
-	<body>
-		<h1>Project Starter</h1>
-		<!-- Script -->
-		<script src="scripts.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://img.icons8.com/cute-clipart/64/null/r--v1.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/gallery.css" />
+    <title>Responsive Website</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav-bar">
+        <a href="#home"><i class="fas fa-home-lg"></i><span>Home</span></a>
+        <a href="#about"><i class="fas fa-user"></i><span>About</span></a>
+        <a href="#gallery"><i class="fas fa-images"></i><span>Gallery</span></a>
+        <a href="#projects"
+          ><i class="fas fa-briefcase"></i><span>Projects</span></a
+        >
+        <a href="#contact"
+          ><i class="fas fa-id-card"></i><span>Contact</span></a
+        >
+      </nav>
+    </header>
+    <!-- Main -->
+    <div class="main-body">
+      <section id="home" class="main-section"><span>home page</span></section>
+      <section id="about" class="main-section"><span>about page</span></section>
+
+      <!-- My gallery Page where small projects will be displayed -->
+      <section id="gallery" class="main-section">
+        <h2 class="heading">My Gallery</h2>
+        <div class="card-container">
+          <div class="card">
+            <div class="card-top">
+              <div class="card-icon">
+                <span class="fas fa-code"></span>
+              </div>
+              <h4 class="card-title">Web Development</h4>
+            </div>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <a href="#">Read more <i class="fas fa-angle-double-right"></i></a>
+          </div>
+
+          <div class="card">
+            <div class="card-top">
+              <div class="card-icon">
+                <span class="fas fa-tools"></span>
+              </div>
+              <h4 class="card-title">Web Design</h4>
+            </div>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <a href="#">Read more <i class="fas fa-angle-double-right"></i></a>
+          </div>
+
+          <div class="card">
+            <div class="card-top">
+              <div class="card-icon">
+                <span class="fas fa-pizza-slice"></span>
+              </div>
+              <h4 class="card-title">UI/UX Development</h4>
+            </div>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <a href="#">Read more <i class="fas fa-angle-double-right"></i></a>
+          </div>
+
+          <div class="card">
+            <div class="card-top">
+              <div class="card-icon">
+                <span class="fas fa-paint-brush"></span>
+              </div>
+              <h4 class="card-title">Adobe Illustrations</h4>
+            </div>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <a href="#">Read more <i class="fas fa-angle-double-right"></i></a>
+          </div>
+
+          <div class="card">
+            <div class="card-top">
+              <div class="card-icon">
+                <span class="fas fa-person-biking"></span>
+              </div>
+              <h4 class="card-title">Animation</h4>
+            </div>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <a href="#">Read more <i class="fas fa-angle-double-right"></i></a>
+          </div>
+
+          <div class="card">
+            <div class="card-top">
+              <div class="card-icon">
+                <span class="fas fa-bullhorn"></span>
+              </div>
+              <h4 class="card-title">Digital marketing</h4>
+            </div>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <a href="#">Read more <i class="fas fa-angle-double-right"></i></a>
+          </div>
+
+          <div class="card">
+            <div class="card-top">
+              <div class="card-icon">
+                <span class="fas fa-pen"></span>
+              </div>
+              <h4 class="card-title">Blog Articles</h4>
+            </div>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <a href="#">Read more <i class="fas fa-angle-double-right"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="main-section">
+        <span>projects page</span>
+      </section>
+      <section id="contact" class="main-section">
+        <span>contact page</span>
+      </section>
+    </div>
+    <!-- Script -->
+    <script src="scripts.js"></script>
+  </body>
 </html>

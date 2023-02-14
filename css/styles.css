@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500&family=Ubuntu:wght@300;400&display=swap");
+
+* {
+  box-sizing: border-box; /* avoid the box model issue, and make sure the width you provide does not get stretched if you add margin padding to the container */
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize; /* make the 1st letter to be capital*/
+  overflow: hidden; /* clip off the extra text which is going out of the box */
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Styling the header section */
+.header {
+  position: fixed; /* it will make the menu fixed fi you scrolling down the page*/
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #83c4fe;
+  height: 4rem;
+  z-index: 100; /*header menu will be at the top of all */
+}
+
+.header .nav-bar {
+  display: flex; /*helps us move items inside the container*/
+}
+
+.header .nav-bar a {
+  flex: 1; /*occupy equal unit of space to all*/
+  text-align: center;
+  align-items: center;
+  font-size: 1.1rem;
+  line-height: 4rem; /*space between two lines also helps to align element vertically center*/
+  color: #035eb8;
+}
+.header .nav-bar .fas {
+  margin: 5px;
+}
+
+/* apply pseudo selector hover */
+.header .nav-bar a:hover {
+  filter: brightness(0.8);
+}
+
+/* apply different bg-color on each anchor element */
+.header .nav-bar a:nth-child(1) {
+  background: #f4b5b5;
+}
+.header .nav-bar a:nth-child(2) {
+  background: #f3e4a4;
+}
+.header .nav-bar a:nth-child(3) {
+  background: #a9f0a2;
+}
+.header .nav-bar a:nth-child(4) {
+  background: #a5caeb;
+}
+.header .nav-bar a:nth-child(5) {
+  background: #eaa9f1;
+}
+
+/* main body section */
+.main-body {
+  display: flex;
+  width: 500%;
+  height: 100vh; /*occupy full visible viewport height */
+}
+
+.main-body .main-section {
+  display: flex;
+  width: 20%;
+  height: 100%;
+  align-items: center; /*align content vertically center*/
+  justify-content: center; /*align content horizontally center*/
+}
+
+.main-body .main-section span {
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: azure;
+  font-size: 8vw; /* responsive width */
+}
+
+.main-body .main-section:nth-child(1) {
+  background: #f4b5b5;
+}
+.main-body .main-section:nth-child(2) {
+  background: #f3e4a4;
+}
+.main-body .main-section:nth-child(3) {
+  background: #a9f0a2;
+}
+.main-body .main-section:nth-child(4) {
+  background: #a5caeb;
+}
+.main-body .main-section:nth-child(5) {
+  background: #eaa9f1;
+}
+
+/* apply media query to adjust styling for different screens */
+@media (max-width: 750px) {
+  .header .nav-bar a span {
+    display: none; /* hide text after 750px or lower for smaller screen*/
+  }
+}
